@@ -1,7 +1,7 @@
 # Adaptive Control Forecasting for Time Series Analysis
 
-**Published:** 2025-02-27
-**Medium:** [https://medium.com/@kyle-t-jones/adaptive-control-forecasting-for-time-series-analysis-129a0afc972a](https://medium.com/@kyle-t-jones/adaptive-control-forecasting-for-time-series-analysis-129a0afc972a)
+Published: 2025-02-27
+Medium: [https://medium.com/@kyle-t-jones/adaptive-control-forecasting-for-time-series-analysis-129a0afc972a](https://medium.com/@kyle-t-jones/adaptive-control-forecasting-for-time-series-analysis-129a0afc972a)
 
 ## About
 
