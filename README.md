@@ -1,24 +1,53 @@
 # Adaptive Control Forecasting for Time Series Analysis
 
-Published: 2025-02-27
-Medium: [https://medium.com/@kyle-t-jones/adaptive-control-forecasting-for-time-series-analysis-129a0afc972a](https://medium.com/@kyle-t-jones/adaptive-control-forecasting-for-time-series-analysis-129a0afc972a)
+Published: 2025-02-27  
+Medium: [Adaptive Control Forecasting for Time Series Analysis](https://medium.com/@kyle-t-jones/adaptive-control-forecasting-for-time-series-analysis-129a0afc972a)
 
 ## Business context
 
-Forecasting time series data presents challenges. Patterns shift due to economic cycles, technological change, or external shocks. Traditional methods assume fixed parameters. They fail when systems change. Adaptive control forecasting solves this. It adjusts model parameters based on new data.
+Forecasting time series data presents challenges. Patterns shift due to economic cycles, technological change, or external shocks. Traditional methods assume fixed parameters and fail when systems change. Adaptive control forecasting adjusts model parameters based on new data.
 
-Adaptive forecasting uses single-parameter and multi-parameter methods. It includes adaptive exponential smoothing, variable smoothing, and Kalman filtering. It also includes the Self-Adaptive Forecasting Technique (SAFT). These methods work well in dynamic environments like financial markets, energy demand, and industrial control.
+This repo demonstrates:
 
-Exponential smoothing applies decreasing weights to past observations. It gives more weight to recent data. The smoothing parameter (α) controls this. Adaptive exponential smoothing updates α continuously to optimize forecasts. It increases α when errors rise, making the model more responsive. It reduces α when errors fall, stabilizing predictions.
+- **Adaptive exponential smoothing** — Trigg-Leach style α adaptation
+- **Adaptive Holt-Winters** — error-driven updates to α, β, and γ
+- **SAFT** — Self-Adaptive Forecasting Technique with model switching
 
-## About
+For Kalman filtering and state-space models, see the dedicated companion repo linked below.
 
-Place the code for this article in this repository.
-The original article export is saved as `article.md`.
+## Project structure
 
-## Files
+```
+.
+├── README.md
+├── article.md              # Original Medium article export
+├── main.py                 # Run all demos
+├── config.yaml             # Demo parameters
+├── src/
+│   ├── adaptive_smoothing.py
+│   ├── synthetic.py
+│   └── plotting.py
+├── tests/
+└── images/                 # Generated figures (created by main.py)
+```
 
-Add your `.ipynb`, `.py`, `.yaml`, `.js`, `.ts`, or other project files here.
+## Quick start
+
+```bash
+uv sync          # or: pip install -e .
+python main.py
+```
+
+Figures are written to `images/`:
+
+- `adaptive_exponential_smoothing.png` — fixed vs adaptive α on a regime-shift series
+- `saft_model_switching.png` — SAFT stable/responsive mode switching
+- `adaptive_holt_winters.png` — seasonal series with adapting parameters
+
+## Related repos
+
+- [State Space Models and Kalman Filtering for Time Series Analysis](../state-space-models-and-kalman-filtering-for-time-series-analysis) — full Kalman filtering walkthrough with structural models and forecasting
+- [Exponential Smoothing for Time Series Forecasting in Python](../exponential-smoothing-for-time-series-forecasting-in-python) — fixed-parameter exponential smoothing and ETS
 
 ## Disclaimer
 

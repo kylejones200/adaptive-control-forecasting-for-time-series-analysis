@@ -22,7 +22,11 @@ node_modules/
 .vscode/
 .idea/
 *.swp
-# Secrets 
+
+# Generated output
+images/
+
+# Secrets
 .env.*
 !.env.example
 credentials.json
