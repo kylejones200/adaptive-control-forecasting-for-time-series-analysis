@@ -28,8 +28,35 @@ For Kalman filtering and state-space models, see the dedicated companion repo li
 │   ├── synthetic.py
 │   └── plotting.py
 ├── tests/
-└── images/                 # Generated figures (created by main.py)
+├── images/                 # Generated figures (created by main.py)
+├── rust/                   # Rust port (core + PyO3 + CLI bench)
+├── benchmark_rust.py       # Python vs Rust performance comparison
+└── docs/RUST_SHOWCASE.md
 ```
+
+## Rust performance port
+
+Side-by-side **Python vs Rust** implementation of adaptive exponential smoothing (~**190×** throughput on the reference benchmark). Python ML demos and plotting stay in Python; Rust targets the numeric hot loop.
+
+| Path | Role |
+|------|------|
+| `src/adaptive_smoothing.py` | Python reference implementation |
+| `rust/adaptive-core/` | Pure Rust library |
+| `rust/adaptive-py/` | PyO3 bindings (`adaptive_forecast_rs`) |
+| `rust/adaptive-bench/` | Standalone CLI benchmark |
+| `benchmark_rust.py` | Python vs Rust timing + correctness check |
+
+```bash
+# Rust-only CLI benchmark
+cd rust && cargo run --release -p adaptive-bench -- 100000 10000
+
+# Python vs Rust (PyO3)
+pip install maturin numpy
+maturin develop --release -m rust/adaptive-py/Cargo.toml
+python benchmark_rust.py
+```
+
+See [docs/RUST_SHOWCASE.md](docs/RUST_SHOWCASE.md) for architecture details.
 
 ## Quick start
 
