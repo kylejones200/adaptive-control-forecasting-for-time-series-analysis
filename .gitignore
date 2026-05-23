@@ -23,6 +23,9 @@ node_modules/
 .idea/
 *.swp
 
+# Rust
+rust/target/
+
 # Generated output
 images/
 

@@ -1,0 +1,15 @@
+[package]
+name = "adaptive_forecast_rs"
+description = "Python bindings for adaptive forecasting kernels (PyO3)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "adaptive_forecast_rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+adaptive-core = { path = "../adaptive-core" }
+pyo3 = { version = "0.28", features = ["extension-module"] }
+numpy = "0.28"

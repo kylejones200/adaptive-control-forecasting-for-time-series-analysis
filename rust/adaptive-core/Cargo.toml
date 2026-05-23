@@ -1,0 +1,8 @@
+[package]
+name = "adaptive-core"
+description = "Adaptive exponential smoothing — pure Rust forecasting kernels"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]

@@ -1,0 +1,13 @@
+[package]
+name = "adaptive-bench"
+description = "CLI benchmark: Rust adaptive smoothing throughput"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "adaptive-bench"
+path = "src/main.rs"
+
+[dependencies]
+adaptive-core = { path = "../adaptive-core" }
